@@ -1,0 +1,11 @@
+@media (max-width:450px) {
+    .fs,.gh{
+        display: none;
+    }
+    .bookcafeenvbtn-container,
+    .caferoomenvbtn-container,
+    .chillvibesenvbtn-container{
+        display: none!important;
+    }
+    
+}

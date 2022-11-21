@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.scss">
+    <link rel="stylesheet" href="./assets/css/res.css">
+    <title>NQC Music Project</title>
+    <link rel="icon"
+        href="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/brown_webpict35_1484337169-1.png"
+        type="image/x-icon" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="header__logo">
+            <img class="logo" src="./assets/icons/lofi-logo.gif" alt="">
+        </div>
+        <div class="header__icon gh">
+            <a target="_blank" rel="noreferrer" href="https://github.com/Sneakyzx"><i
+                    class="fab fa-github"></i><span style="margin-left:10px;">Sneakyzx - Nguyễn Quốc Cường</span></a>
+
+        </div>
+        <div class="header__icon">
+            <div class="header__icon--weather ">
+                <input type="checkbox" name="" class="switch">
+                <i class="fa-solid fa-sun iconsun"></i>
+                <i class="fa-solid fa-moon iconmoon"></i>
+            </div>
+            <div class="header__icon--fullscreen fs">
+                <i class="fa-solid fa-expand" id="fullscreen"></i>
+            </div>
+
+        </div>
+        <div class="header__icon">
+            <div class="header__signupin js-header__signupin">
+                <i class="fa-solid fa-user "></i>Sign-in/Sign-up
+            </div>
+            <div class="header__icon--logout js-logout"><i><i
+                        class="fa-solid fa-arrow-right-from-bracket "></i></i><span
+                    style="color:#fff;margin-left: 10px;">Log out</span>
+            </div>
+
+
+        </div>
+        <div class="header__username">
+            <i class="fa-solid fa-circle-user"></i>
+            <span id="header__username-text">""</span>
+
+        </div>
+
+    </div>
+
+    <div class="main">
+        <video class="background-video--sub" src="./assets/videos/Day-sunny.mp4" loop="" autoplay="" playsinline
+            muted></video>
+        <video class="background-video" src="./assets/videos/Day-sunny.mp4" loop="" autoplay="" playsinline
+            muted></video>
+        <!-- render video-start -->
+        <div style="display: none;">
+            <video class="render" src="./assets/videos/CafeDay.mp4"></video>
+            <video class="render" src="./assets/videos/CafeNight.mp4"></video>
+            <video class="render" src="./assets/videos/CafeRainyDay.mp4"></video>
+            <video class="render" src="./assets/videos/CafeRainyNight.mp4"></video>
+            <video class="render" src="./assets/videos/Day-rainny.mp4"></video>
+            <video class="render" src="./assets/videos/Day-sunny.mp4"></video>
+            <video class="render" src="./assets/videos/ExteriorDay.mp4"></video>
+            <video class="render" src="./assets/videos/ExteriorNight.mp4"></video>
+            <video class="render" src="./assets/videos/ExteriorRainyDay.mp4"></video>
+            <video class="render" src="./assets/videos/ExteriorRainyNight.mp4"></video>
+            <video class="render" src="./assets/videos/Night-clear.mp4"></video>
+            <video class="render" src="./assets/videos/Night-rainny.mp4"></video>
+        </div>
+        <!-- render video-end -->
+        <div class="envbtn-container">
+            <div class="chillvibesenvbtn-container">
+                <div class="chillkeyboard-btn">
+                    <div class="chillkeyboard-btn--sub">
+                        <div class="chillkeyboardtext">Key Board</div>
+                        <div class="envvolum " id="envkeyboardchill">
+                            <div class="envvolumbar " id="envkeyboardbarchill"></div>
+                            <div class="envvolumcircle " id="envkeyboardcirclechill"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="chillraincity-btn">
+                    <div class="chillraincity-btn--sub">
+                        <div class="chillraincitytext">Rain City</div>
+                        <div class="envvolum " id="envraincitychill">
+                            <div class="envvolumbar " id="envraincitybarchill"></div>
+                            <div class="envvolumcircle " id="envraincitycirclechill"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="bookcafeenvbtn-container">
+                <div class="comein-btn">
+                    <div class="comein-btn--sub">
+                        <div class="comeintext">Come In</div>
+                    </div>
+
+                </div>
+                <div class="bookcaferaincity-btn">
+                    <div class="bookcaferaincity-btn--sub">
+                        <div class="bookcaferaincitytext">Rain City</div>
+                        <div class="envvolum " id="envraincitybookcafe">
+                            <div class="envvolumbar " id="envraincitybarbookcafe"></div>
+                            <div class="envvolumcircle " id="envraincitycirclebookcafe"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="bookcafecitytraffic-btn">
+                    <div class="bookcafecitytraffic-btn--sub">
+                        <div class="bookcafecitytraffictext">City Traffic</div>
+                        <div class="envvolum " id="envcitytrafficbookcafe">
+                            <div class="envvolumbar " id="envcitytrafficbarbookcafe"></div>
+                            <div class="envvolumcircle " id="envcitytrafficcirclebookcafe"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="caferoomenvbtn-container">
+                <div class="caferoomkeyboard-btn">
+                    <div class="caferoomkeyboard-btn--sub">
+                        <div class="caferoomkeyboardtext">Key Board</div>
+                        <div class="envvolum " id="envkeyboardcaferoom">
+                            <div class="envvolumbar " id="envkeyboardbarcaferoom"></div>
+                            <div class="envvolumcircle " id="envkeyboardcirclecaferoom"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="caferoomraincity-btn">
+                    <div class="caferoomraincity-btn--sub">
+                        <div class="caferoomraincitytext">Rain City</div>
+                        <div class="envvolum " id="envraincitycaferoom">
+                            <div class="envvolumbar " id="envraincitybarcaferoom"></div>
+                            <div class="envvolumcircle " id="envraincitycirclecaferoom"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="caferoompeople-btn">
+                    <div class="caferoompeople-btn--sub">
+                        <div class="caferoompeopletext">People</div>
+                        <div class="envvolum " id="envpeoplecaferoom">
+                            <div class="envvolumbar " id="envpeoplebarcaferoom"></div>
+                            <div class="envvolumcircle " id="envpeoplecirclecaferoom"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="comeout-btn">
+                    <div class="comeout-btn--sub">
+                        <div class="comeouttext">Go Out</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <video class="background-video"   src="./assets/videos/Day-rainny.mp4" loop="" autoplay="" muted
+            ></video> -->
+
+        <div class="icon--rain-container">
+            <i class="fa-solid fa-cloud-rain"></i>
+        </div>
+
+        <div class="taskbar">
+            <div class="taskbar__item soundboard-container">
+                <i class="fas fa-sliders-h"></i>
+                <div class="soundboard">
+                    <div class="noizertext">Noise library</div>
+                    <div class="songvolumetext">Song Volume</div>
+                    <div class="sound-1">
+                        <div class="sound__item js-sound__item">
+                            <i class="fa-solid fa-volume-low" id="volumelow" style="color: #f3a952;"></i>
+                            <div class="sound__volum js-sound__volum"></div>
+                            <div class="sound__circle js-sound__circle"></div>
+                            <i class="fa-solid fa-volume-high" id="volumehight" style="color: #f3a952;"></i>
+                        </div>
+
+                    </div>
+                    <div class="bgnoisetext">Background Noise</div>
+
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">City Traffic :</div>
+                        </div>
+                        <div class="sound-sub CityTraffic">
+                            <div class="sound__volum-sub CityTraffic-bar"></div>
+                            <div class="sound__circle-sub CityTraffic-circle"></div>
+                            <audio loop="" preload="auto" id="CityTraffic"
+                                src="./assets/environmentalsound/city_traffic.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Key Board :</div>
+                        </div>
+                        <div class="sound-sub KeyBoard">
+                            <div class="sound__volum-sub  KeyBoard-bar"></div>
+                            <div class="sound__circle-sub  KeyBoard-circle"></div>
+                            <audio loop="" preload="auto" id="KeyBoard"
+                                src="./assets/environmentalsound/key_board.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Rain City :</div>
+                        </div>
+                        <div class="sound-sub RainCity">
+                            <div class="sound__volum-sub RainCity-bar"></div>
+                            <div class="sound__circle-sub RainCity-circle"></div>
+                            <audio loop="" preload="auto" id="RainCity"
+                                src="./assets/environmentalsound/rain_city.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Forest Night :</div>
+                        </div>
+                        <div class="sound-sub ForestNight">
+                            <div class="sound__volum-sub ForestNight-bar"></div>
+                            <div class="sound__circle-sub ForestNight-circle"></div>
+                            <audio loop="" preload="auto" id="ForestNight"
+                                src="./assets/environmentalsound/forest_night.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Fan :</div>
+                        </div>
+                        <div class="sound-sub Fan">
+                            <div class="sound__volum-sub Fan-bar"></div>
+                            <div class="sound__circle-sub Fan-circle"></div>
+                            <audio loop="" preload="auto" id="Fan" src="./assets/environmentalsound/fan.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound ">People :</div>
+                        </div>
+                        <div class="sound-sub People">
+                            <div class="sound__volum-sub People-bar"></div>
+                            <div class="sound__circle-sub People-circle"></div>
+                            <audio loop="" preload="auto" id="People"
+                                src="./assets/environmentalsound/people_talk_inside.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Rain Forest :</div>
+                        </div>
+                        <div class="sound-sub RainForest">
+                            <div class="sound__volum-sub RainForest-bar"></div>
+                            <div class="sound__circle-sub RainForest-circle"></div>
+                            <audio loop="" preload="auto" id="RainForest"
+                                src="./assets/environmentalsound/rain_forest.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">River :</div>
+                        </div>
+                        <div class="sound-sub River">
+                            <div class="sound__volum-sub River-bar"></div>
+                            <div class="sound__circle-sub River-circle"></div>
+                            <audio loop="" preload="auto" id="River"
+                                src="./assets/environmentalsound/river.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Waves :</div>
+                        </div>
+                        <div class="sound-sub Waves">
+                            <div class="sound__volum-sub Waves-bar"></div>
+                            <div class="sound__circle-sub Waves-circle"></div>
+                            <audio loop="" preload="auto" id="Waves"
+                                src="./assets/environmentalsound/waves.mp3"></audio>
+                        </div>
+                    </div>
+                    <div class="bgnoise__item">
+                        <div class="namesound-ctn">
+                            <div class="namesound">Wind :</div>
+                        </div>
+                        <div class="sound-sub Wind">
+                            <div class="sound__volum-sub Wind-bar"></div>
+                            <div class="sound__circle-sub Wind-circle"></div>
+                            <audio loop="" preload="auto" id="Wind" src="./assets/environmentalsound/wind.mp3"></audio>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="taskbar__item music-container">
+                <i class="fa-solid fa-music"></i>
+                <div class="music-list-board">
+                    <div class="music-board--text"><i class="fa-solid fa-music"></i>Song Playlist</div>
+                    <div class="music-volume--ctn">
+                        <div class="music-volume--item">
+                            <i class="fa-solid fa-volume-low" id="volumelow1" ></i>
+                            <div class="music__volum"></div>
+                            <div class="music__circle"></div>
+                            <i class="fa-solid fa-volume-high" id="volumehight1" ></i>
+                        </div>
+            <!-- <audio id="musicsrc" loop="" preload="auto" src="./assets/orther-music--mp3/JeremyZucker-comethru.mp3"></audio> -->
+
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="comethru" ></i>
+                        <div class="music-name">Ai rồi cũng sẽ khác</div>
+                        <div class="music-singer">Hà Nhi</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - AI RỒI CŨNG SẼ KHÁC  HÀ NHI  LIVE VERSION AT GIAO LỘ THỜI GIAN.mp3" id="audiocomethru"></audio>
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="atmyworst" ></i>
+                        <div class="music-name">Chạm khẽ tim anh một chút thôi</div>
+                        <div class="music-singer">Noo Phước Thịnh</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - Chạm Khẽ Tim Anh Một Chút Thôi  Noo Phước Thịnh  LYRIC VIDEO.mp3" id="audioatmyworst"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="coem"></i>
+                        <div class="music-name">Có Em</div>
+                        <div class="music-singer">LowG</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/LowG-Coem.mp3" id="audiocoem"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="theocean"></i>
+                        <div class="music-name">I'm still loving you</div>
+                        <div class="music-singer">Noo Phước Thịnh</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - IM STILL LOVING YOU  NOO PHƯỚC THỊNH  OFFICIAL MV.mp3" id="audiotheocean"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="deathbed"></i>
+                        <div class="music-name">Không thể cùng nhau suốt kiếp</div>
+                        <div class="music-singer">Hoà Minzy</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - KHÔNG THỂ CÙNG NHAU SUỐT KIẾP  HOÀ MINZY ft MR SIRO  LYRICS VIDEO.mp3" id="audiodeathbed"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="thanhxuan"></i>
+                        <div class="music-name">Gặp em đúng lúc</div>
+                        <div class="music-singer">Luân Trang</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - Vietsub Gặp em đúng lúc  Luân Tang.mp3" id="audiothanhxuan"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="thichemhoinhieu"></i>
+                        <div class="music-name">Ngỡ như giấc mơ</div>
+                        <div class="music-singer">Chu Duyên</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - Ngỡ Như Giấc Mơ New Version  Chu Duyên  MV LYRICS.mp3" id="audiothichemhoinhieu"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="daloyeuemnhieu"></i>
+                        <div class="music-name">Đừng như thói quen</div>
+                        <div class="music-singer">Jaykii & Sara Luu</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - OFFICIAL Đừng Như Thói Quen   Jaykii ft Sara Lưu Lyric Video.mp3" id="audiodaloyeuemnhieu"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="kissmemore"></i>
+                        <div class="music-name">Tình nào không như tình đầu</div>
+                        <div class="music-singer">Trung Quân</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - TÌNH NÀO KHÔNG NHƯ TÌNH ĐẦU  TRUNG QUÂN  Official Lyrics Video.mp3" id="audiokissmemore"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="backtohometown"></i>
+                        <div class="music-name">Tay trái chỉ trăng</div>
+                        <div class="music-singer">Tát Đỉnh Đỉnh</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - VietsubPinyin Tay Trái Chỉ Trăng  Tát Đỉnh Đỉnh   OST Hương Mật Tựa Khói Sương.mp3 " id="audiobacktohometown"></audio>
+
+                    </div>
+                    <div class="music-item">
+                        <i class="fa-solid fa-circle-play" id="dungbamvaonghe"></i>
+                        <div class="music-name">Phi Điểu và ve sầu</div>
+                        <div class="music-singer">Nhậm Thiên</div>
+                        <audio loop="" preload="auto" src="./assets/orther-music--mp3/y2mate.com - VietsubTiktok Phi Điểu Và Ve Sầu  Nhậm Nhiên  飞鸟和蝉  任然  Nhạc Hoa tâm trạng.mp3" id="audiodungbamvaonghe"></audio>
+
+                    </div>
+
+
+                  
+
+
+                </div>
+            </div>
+            <div class="taskbar__item screen-container" id="screen">
+                <i class="fas fa-film"></i>
+                <div class="video-list-board" id="screen-board">
+
+                    <div class="video__item" id="chillvibes"><img src="./assets/img/chill.6d5d8ab2.png" alt=""></div>
+                    <div class="video__item" id="bookcafe"><img src="./assets/img/bookcafe.png" alt=""></div>
+                    <div class="video__item" id="caferoom"><img src="./assets/img/caferoom - Copy.png" alt=""></div>
+                    <!-- <div class="video__item" style="position: relative;">
+                        <img src="./assets/img/dreamin.dedb63ff377310884f0e.png" alt="" style="opacity: 0.5;">
+                        <button style="opacity: 0.5;"><i class="fa-solid fa-crown"></i>Go Premium</button>
+                    </div>
+                    <div class="video__item" style="position: relative;">
+                        <img src="./assets/img/honolulu-pw.f0c9ad995b0ee10fc44f.png" alt="" style="opacity: 0.5;">
+                        <button style="opacity: 0.5;"><i class="fa-solid fa-crown"></i>Go Premium</button>
+                    </div>
+                    <div class="video__item" style="position: relative;">
+                        <img src="./assets/img/kyoto.8e810582a43d59dd3dc8.png" alt="" style="opacity: 0.5;">
+                        <button style="opacity: 0.5;"><i class="fa-solid fa-crown"></i>Go Premium</button>
+                    </div> -->
+                </div>
+            </div>
+            <div class="taskbar__item countdown-container">
+                <i class="fa-solid fa-clock"></i>
+                <div class="countdown-board">
+                    <div class="oclock">
+                        <div class="dot"></div>
+                        <div class="oclock-item oclock-hours-0">0</div>
+                        <div class="oclock-item oclock-hours-1">1</div>
+                        <div class="oclock-item oclock-hours-2">2</div>
+                        <div class="oclock-item oclock-hours-3">3</div>
+                        <div class="oclock-item oclock-hours-4">4</div>
+                        <div class="oclock-item oclock-hours-5">5</div>
+                        <div class="oclock-item oclock-hours-6">6</div>
+                        <div class="oclock-item oclock-hours-7">7</div>
+                        <div class="oclock-item oclock-hours-8">8</div>
+                        <div class="oclock-item oclock-hours-9">9</div>
+                        <div class="oclock-item oclock-hours-10">10</div>
+                        <div class="oclock-item oclock-hours-11">11</div>
+                    </div>
+                    
+                        <div id="h">00</div>
+                        <div style="position: absolute; top:280px;color:#fff;right:209px">:</div>
+                        <div id="m">00</div>
+                        <div style="position: absolute; top:280px;color:#fff;right:173px">:</div>
+                        <div id="s" >00</div>
+                        
+                        <div class="startcd">Start Counting Down</div>
+                        <div class="timeup">Time Up</div>
+                        
+                    
+                    <div class="countdown-btn">
+                        <div class="cd-btn reset-btn" onclick="reset()">Reset</div>
+                        <div class="cd-btn stop-btn" onclick="stop()">Stop</div>
+                        <div class="cd-btn start-btn"  onclick="start()">Start</div>
+                    </div>
+                  
+
+                </div>
+
+
+               
+
+                 
+
+            </div>
+        </div>
+
+
+        <div class="bottombar-container">
+            <div class="bottombar">
+                <div class="namesong">Name Song :Chill1</div>
+                <div class="bottom__nav">
+                    <img src="./assets/img/back.png" id="back" alt="">
+                    <img src="./assets/img/play.png" id="play" alt="">
+                    <img src="./assets/img/next.png" id="next" alt="">
+                </div>
+            </div>
+            <audio id="audio" loop="" preload="auto" src="./assets/music_lofi/chill1.mp3"></audio>
+            <!-- 
+       
+        <div class="volumefooter-container">
+            
+            <div class="volumefooter">
+                <div class="volumebar"></div>
+                <div class="volume-circle"></div>
+            </div>
+        </div> -->
+        </div>
+    </div>
+    <!-- signup-in start -->
+    <div class="signup-in">
+        <div class="signin-container">
+            <div class="text1">Sign-in Here</div>
+            <div class="message-error message-hidden">Invalid username/password combination</div>
+            <div class="signin-item">
+                <input type="text" name="" id="email1" class="signin-input"  placeholder="Enter username here">
+            </div>
+            <div class="signin-item">
+                <input type="password" name="" id="password1" class="signin-input" placeholder="Enter password here">
+            </div>
+
+            <div class="text2" onclick="signin()">Sign-in</div>
+            <div class="text3">Don't have an account?</div>
+            <div class="text4 text3"><a href="#" id="signupbtn">Sign-up</a>here</div>
+
+        </div>
+
+        <div class="signup-container">
+            <div class="text1" style="color: #1b7870;">Sign-up Here</div>
+            <div class="message-success message-hidden">Sign Up Success</div>
+            <div class="signup-item">
+                <input type="text" name="" id="email" class="signup-input" style="border-bottom: 2px solid #2aefdd;" placeholder="Enter username here">
+            </div>
+            <div class="signup-item">
+                <input type="password" name="" id="password" class="signup-input" style="border-bottom: 2px solid #2aefdd;" placeholder="Enter password here">
+            </div>
+
+            <div class="text2" onclick="signup()" style="background-color: #19dfe9f0">Sign-up</div>
+            <div class="text3">Already have an account?</div>
+            <div class="text4 text3"><a href="#" id="signinbtn">Sign-in</a>here</div>
+
+        </div>
+
+    </div>
+    <!-- signup-in end -->
+
+
+
+</body>
+
+
+
+
+
+<!-- <script>
+    const weaTher =document.querySelector(".header__icon--weather");
+// let w=document.getElementsByClassName('switch');
+let quy = document.querySelectorAll('.switch')
+</script> -->
+
+
+<script src="./assets/js/signupin.js"></script>
+<script src="./assets/js/variable.js"></script>
+<script src="./assets/js/function.js"></script>
+<script src="./assets/js/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
